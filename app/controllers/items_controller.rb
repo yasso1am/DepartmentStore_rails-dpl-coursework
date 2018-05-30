@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
   def index
-    @items = @department.items
+   redirect_to department_path(@department)
   end
 
   def show
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:qty, :name, :category)
+      params.require(:item).permit(:qty, :name, :category, :price)
     end
 
 end
