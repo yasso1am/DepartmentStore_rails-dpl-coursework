@@ -19,8 +19,15 @@
 </table>
 <hr />
 
-<%= link_to 'Edit Item', edit_department_item_path(@department, @item) %>
-<%= link_to 'Delete Item', [@department, @item], method: :delete %>
-<%= link_to "Back to #{@department.name}", department_path(@department) %>
+<h4> Comments </h4>
+<button> <%= link_to 'Add a Comment', new_item_comment_path(@item) %> </button>
+
+<% @item.comments.each do |comment| %>
+  <%= render 'comments/comment', { comment: comment } %>
+<% end %>
+
+<button> <%= link_to 'Edit Item', edit_department_item_path(@department, @item) %> </button>
+<button> <%= link_to 'Delete Item', [@department, @item], method: :delete %> </button>
+<button> <%= link_to "Back to #{@department.name}", department_path(@department) %> </button>
     
 

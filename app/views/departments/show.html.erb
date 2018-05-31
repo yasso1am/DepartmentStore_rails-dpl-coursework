@@ -9,6 +9,6 @@
     <% end %>
   </ul>
 <hr />
-<%= link_to 'Edit Department Name', edit_department_path(@department) %>
-<%= link_to 'Delete Department', @department, method: :delete %>
-<%= link_to 'Back', departments_path %>
+<button> <%= link_to 'Edit Department Name', edit_department_path(@department) %> </button>
+<button> <%= link_to 'Delete Department', @department, method: :delete %> </button>
+<button> <%= link_to 'Back', departments_path %> </button>
